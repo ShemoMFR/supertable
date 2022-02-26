@@ -1,0 +1,12 @@
+.containerHeader {
+    height: 100px;
+    background-color: rgb(255, 148, 49);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
