@@ -12,11 +12,12 @@ import style from './DataTable.module.css';
 
 export default function DataTable({ datas }) {
 
-    const {setIsSideOpen, isSideOpen, rateApplicant, setIndexRow} = useContext(SideInfosContext);
+    const {setIsSideOpen, isSideOpen, rateApplicant, setIndexRow, setApplicant} = useContext(SideInfosContext);
 
-    function handleClickRow(index) {
+    function handleClickRow(index, row) {
         setIndexRow(index);
         setIsSideOpen(!isSideOpen);
+        setApplicant(row.original)
     }
 
     const data = useMemo(
@@ -90,7 +91,7 @@ export default function DataTable({ datas }) {
             {rows.map((row, index) => {
                 prepareRow(row)
                 return (
-                    <Tr  {...row.getRowProps()} className={style.row}  onClick={() => handleClickRow(index)}>
+                    <Tr  {...row.getRowProps()} className={style.row}  onClick={() => handleClickRow(index, row)}>
                     {row.cells.map((cell) => (
                         <Td  {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
                         {cell.render('Cell')}

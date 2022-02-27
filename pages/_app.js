@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
     const [isSideOpen, setIsSideOpen] = useState(false);
     const [rateApplicant, setRateApplicant] = useState(0);
     const [indexRow, setIndexRow] = useState('');
+    const [applicant, setApplicant] = useState({});
 
     return (
         <SideInfosContext.Provider value={{
@@ -24,7 +25,9 @@ function MyApp({ Component, pageProps }) {
             rateApplicant: rateApplicant, 
             setRateApplicant: setRateApplicant,
             index: indexRow,
-            setIndexRow: setIndexRow
+            setIndexRow: setIndexRow, 
+            applicant: applicant,
+            setApplicant: setApplicant
         }}
         >
             <Layout>

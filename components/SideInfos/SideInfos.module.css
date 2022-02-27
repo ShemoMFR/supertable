@@ -2,19 +2,49 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 20%;
     height: 100%;
     padding: 20px 15px;
-    border: 1px solid red;
     animation: slide 0.2s forwards; 
-
+    background-color: rgba(128, 128, 128, 0.3);
 }
 
 .headerSide {
     font-size: 1.5rem;
     border-bottom: 1px solid black;
     margin-bottom: 10px;
+    width: 90%;
+}
+
+.titles {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.containerStars {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.star, .starG, .starJ {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.starG {
+    color:rgba(128, 128, 128, 0.3);
+}   
+
+.starJ {
+    color: #ffc107;
+}
+
+.star:hover {
+    color: #ffc107;
 }
 
 @keyframes slide {
