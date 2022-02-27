@@ -13,8 +13,7 @@ export default function Index(props) {
 
     return (
         <main>
-            {data && <DataTable datas={data.datas}/>}
-            {error && <p>{error}</p>}
+            {data ? <DataTable datas={data.datas}/> : <p>{error}</p>}
         </main>
     )
 }

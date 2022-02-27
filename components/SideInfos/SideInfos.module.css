@@ -1,0 +1,16 @@
+.containerSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    padding: 20px 15px;
+    border: 1px solid red;
+}
+
+.headerSide {
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}

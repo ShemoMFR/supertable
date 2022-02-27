@@ -15,13 +15,16 @@ function MyApp({ Component, pageProps }) {
     const [queryClient] = useState(() => new QueryClient());
     const [isSideOpen, setIsSideOpen] = useState(false);
     const [rateApplicant, setRateApplicant] = useState(0);
+    const [indexRow, setIndexRow] = useState('');
 
     return (
         <SideInfosContext.Provider value={{
             isSideOpen: isSideOpen, 
             setIsSideOpen: setIsSideOpen,
             rateApplicant: rateApplicant, 
-            setRateApplicant: setRateApplicant
+            setRateApplicant: setRateApplicant,
+            index: indexRow,
+            setIndexRow: setIndexRow
         }}
         >
             <Layout>

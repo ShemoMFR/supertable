@@ -1,10 +1,18 @@
-import React, { useMemo } from 'react';
+/* LIBRAIRIES */
+import React, { useMemo, useContext } from 'react';
+import SideInfosContext from '../../context/SideInfosContext';
 
+/* UI */ 
 import { Table, Thead, Tbody, Tr, Th, Td, chakra } from '@chakra-ui/react'
 import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
 import { useTable, useSortBy } from 'react-table'
 
+/* CSS */ 
+import style from './DataTable.module.css';
+
 export default function DataTable({ datas }) {
+
+    const {isSideOpen, rateApplicant, setIndexRow} = useContext(SideInfosContext);
 
     const data = useMemo(
         () => datas,
@@ -74,12 +82,12 @@ export default function DataTable({ datas }) {
         </Thead>
         <Tbody {...getTableBodyProps()}>
 
-            {rows.map((row) => {
+            {rows.map((row, index) => {
                 prepareRow(row)
                 return (
-                    <Tr {...row.getRowProps()} onClick={() => console.log('test click')}>
+                    <Tr {...row.getRowProps()} className={style.row}  onClick={() => setIndexRow(index)}>
                     {row.cells.map((cell) => (
-                        <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
+                        <Td  {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
                         {cell.render('Cell')}
                     </Td>
                     ))}
