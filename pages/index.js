@@ -68,13 +68,14 @@ let datas = [
         "has_guarantor": true,
         "preferred_move_in_date": "01/04/2022"
     }
-] 
+]  
 
-const getDatas = async () => await (await fetch("https://api.spacexdata.com/v4/launches/latest").then(res => res.json()));
+const getDatas = async () => await (await fetch("/api/datas").then(res => res.json()));
 
 export default function Index(props) {
 
-const {data, error} = useQuery('fetchingDatas', getDatas); 
+    const {data, error} = useQuery('fetchingDatas', getDatas); 
+    console.log(data);
 
     return (
         <main>
