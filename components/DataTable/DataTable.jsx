@@ -77,9 +77,9 @@ export default function DataTable({ datas }) {
             {rows.map((row) => {
                 prepareRow(row)
                 return (
-                <Tr {...row.getRowProps()}>
+                    <Tr {...row.getRowProps()} onClick={() => console.log('test click')}>
                     {row.cells.map((cell) => (
-                    <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
+                        <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
                         {cell.render('Cell')}
                     </Td>
                     ))}

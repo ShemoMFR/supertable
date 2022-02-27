@@ -1,20 +1,27 @@
+/* LIBRAIRIES */
+import React from 'react'; 
+
 /* COMPONENTS */ 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import SideInfos from '../SideInfos/SideInfos';
 
 /* CSS */ 
 import Style from './Layout.module.css';
-import { useEffect } from 'react';
 
 export default function Layout(props) {
     
     return (
         <div className='globalContainer'>
-            <Header />
-            <div className='container flexGrow'>
-                {props.children}
-            </div>
-            <Footer />
+                <Header />
+                <div className="flexGrow" style={{display: 'flex'}}>
+                    <div className='container'>
+                        {props.children}
+                    </div>
+
+                    <SideInfos />
+                </div>
+                <Footer />
         </div>
     )
 }

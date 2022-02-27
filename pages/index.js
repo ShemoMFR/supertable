@@ -4,7 +4,8 @@ import { dehydrate, useQuery, QueryClient } from 'react-query';
 /* UI */
 import DataTable from '../components/DataTable/DataTable'; 
 
-const getDatas = async () => await (await fetch("/api/datas").then(res => res.json()));
+/* SERVICE */
+const getDatas = async () => await fetch("/api/datas").then(res => res.json());
 
 export default function Index(props) {
 

@@ -1,7 +1,8 @@
 /* LIBRAIRIES */ 
 import React, { useState } from 'react';
-import { Hydrate, QueryClient, QueryClientProvider } from 'react-query'
-import { ChakraProvider, theme } from '@chakra-ui/react'
+import SideInfosContext from '../context/SideInfosContext';
+import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
+import { ChakraProvider, theme } from '@chakra-ui/react';
 
 /* COMPONENT */
 import Layout from '../components/Layout/Layout';
@@ -11,18 +12,28 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
 
-    const [queryClient] = useState(() => new QueryClient())
+    const [queryClient] = useState(() => new QueryClient());
+    const [isSideOpen, setIsSideOpen] = useState(false);
+    const [rateApplicant, setRateApplicant] = useState(0);
 
     return (
-        <Layout>
-            <QueryClientProvider client={queryClient}>
-                <Hydrate state={pageProps.dehydratedState}>
-                <ChakraProvider theme={theme}>
-                    <Component {...pageProps} />
-                </ChakraProvider>
-                </Hydrate>
-            </QueryClientProvider>   
-        </Layout>    
+        <SideInfosContext.Provider value={{
+            isSideOpen: isSideOpen, 
+            setIsSideOpen: setIsSideOpen,
+            rateApplicant: rateApplicant, 
+            setRateApplicant: setRateApplicant
+        }}
+        >
+            <Layout>
+                <QueryClientProvider client={queryClient}>
+                    <Hydrate state={pageProps.dehydratedState}>
+                    <ChakraProvider theme={theme}>
+                        <Component {...pageProps} />
+                    </ChakraProvider>
+                    </Hydrate>
+                </QueryClientProvider>   
+            </Layout>    
+        </SideInfosContext.Provider>
     )
 }
 
