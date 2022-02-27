@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
     const [rateApplicant, setRateApplicant] = useState(0);
     const [indexRow, setIndexRow] = useState('');
     const [applicant, setApplicant] = useState({});
+    const [stars, setStars] = useState([]);
 
     return (
         <SideInfosContext.Provider value={{
@@ -27,7 +28,9 @@ function MyApp({ Component, pageProps }) {
             index: indexRow,
             setIndexRow: setIndexRow, 
             applicant: applicant,
-            setApplicant: setApplicant
+            setApplicant: setApplicant,
+            stars: stars,
+            setStars: setStars
         }}
         >
             <Layout>

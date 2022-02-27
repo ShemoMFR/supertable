@@ -1,5 +1,5 @@
 /* LIRAIRIES */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import SideInfosContext from '../../context/SideInfosContext';
 
 /* CSS */
@@ -10,8 +10,11 @@ import {AiFillStar} from 'react-icons/ai';
 
 export default function SideInfos() {
 
-    const {isSideOpen, rateApplicant, setIsSideOpen, setRateApplicant, applicant} = useContext(SideInfosContext);
-    const [stars, setStars] = useState([<AiFillStar className={style.star} />, <AiFillStar className={style.star} />,<AiFillStar className={style.star} />, <AiFillStar className={style.star} />, <AiFillStar className={style.star} />]);
+    const {isSideOpen, rateApplicant, setIsSideOpen, setRateApplicant, applicant, stars, setStars} = useContext(SideInfosContext);
+
+    useEffect(() => {
+        setStars([<AiFillStar className={style.star} />, <AiFillStar className={style.star} />,<AiFillStar className={style.star} />, <AiFillStar className={style.star} />, <AiFillStar className={style.star} />]);
+    } , []);
 
     function setRate(index) {
 
