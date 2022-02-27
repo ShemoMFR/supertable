@@ -5,3 +5,51 @@
 .row:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.headerT {
+    width: 80%;
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: 950px) {
+    .headerT {
+        width: 700%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .row {
+        font-size: 0.6rem;
+    }
+
+}
+
+@media screen and (max-width: 610px) {
+    .headerT {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .headerT {
+        margin-left: 200px;
+    }
+
+    .row {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 435px) {
+
+    .headerT {
+        margin-left: 300px;
+    }
+
+    .row {
+        font-size: 0.4rem;
+    }
+}
+    

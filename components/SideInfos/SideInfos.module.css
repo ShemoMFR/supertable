@@ -55,3 +55,12 @@
         transform: translateX(0%);
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    .containerSide {
+        padding: 0;
+        background-color: rgba(128, 128, 128, 0.3);
+    }
+}
+    

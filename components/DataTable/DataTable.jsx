@@ -28,19 +28,19 @@ export default function DataTable({ datas }) {
     const columns = useMemo(
       () => [
         {
-            Header: 'First Name',
+            Header: 'First',
             accessor: 'firstname',
         },
         {
-            Header: 'Last Name',
+            Header: 'Last',
             accessor: 'lastname',
         },
         {
-            Header: 'Job Title',
+            Header: 'Job',
             accessor: 'job_title',
         },
         {
-            Header: 'Monthly Salary',
+            Header: 'Salary',
             accessor: 'monthly_salary',
             isNumeric: true,
         },
@@ -49,7 +49,7 @@ export default function DataTable({ datas }) {
             accessor: 'has_guarantor',
         },
         {
-            Header: "Move in date",
+            Header: "Date",
             accessor: 'preferred_move_in_date',
         }
       ],
@@ -58,20 +58,19 @@ export default function DataTable({ datas }) {
   
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data }, useSortBy)
-  
+
     return (
-      <Table {...getTableProps()} variant='striped' size='lg'>
-        <Thead>
+      <Table {...getTableProps()} variant='striped' size='md' className={style.headerT} >
+        <Thead >
 
           {headerGroups.map((headerGroup) => (
                 <Tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((column) => (
-                        <Th
-                        {...column.getHeaderProps(column.getSortByToggleProps())}
-                        isNumeric={column.isNumeric}
+                        <Th {...column.getHeaderProps(column.getSortByToggleProps())}
+                        isNumeric={column.isNumeric}  /* style={{fontSize: "0.6rem"}} */
                         >
                         {column.render('Header')}
-                        <chakra.span pl='4'>
+                        <chakra.span pl='4' >
                             {column.isSorted ? (
                             column.isSortedDesc ? (
                                 <TriangleDownIcon aria-label='sorted descending' />

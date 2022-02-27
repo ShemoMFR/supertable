@@ -17,8 +17,8 @@ export default function Layout(props) {
     return (
         <div className='globalContainer'>
                 <Header />
-                <div className="flexGrow" style={{display: 'flex'}}>
-                    <div className='container flexGrow'>
+                <div /* className="flexGrow" */ style={{display: 'flex'}}>
+                    <div className='container'>
                         {props.children}
                     </div>
 

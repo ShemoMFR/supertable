@@ -26,7 +26,6 @@ a {
 
 .container {
     max-width: 1400px;
-    height: 100%;
     margin: 0 auto;
     padding: 15px;
     transition: all 0.5s;
@@ -35,3 +34,11 @@ a {
 .flexGrow {
     flex-grow: 1;
 }
+
+@media screen and (max-width: 730px) {
+    .container {
+        overflow: auto;
+        text-overflow: clip;
+    }
+}
+    
