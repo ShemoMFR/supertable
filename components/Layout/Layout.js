@@ -1,5 +1,6 @@
 /* LIBRAIRIES */
-import React from 'react'; 
+import React, { useMemo, useContext } from 'react';
+import SideInfosContext from '../../context/SideInfosContext';
 
 /* COMPONENTS */ 
 import Header from '../Header/Header';
@@ -10,16 +11,19 @@ import SideInfos from '../SideInfos/SideInfos';
 import Style from './Layout.module.css';
 
 export default function Layout(props) {
+
+    const {isSideOpen, rateApplicant, setIndexRow} = useContext(SideInfosContext);
     
     return (
         <div className='globalContainer'>
                 <Header />
                 <div className="flexGrow" style={{display: 'flex'}}>
-                    <div className='container'>
+                    <div className='container flexGrow'>
                         {props.children}
                     </div>
 
-                    <SideInfos />
+                    {isSideOpen && <SideInfos />}
+
                 </div>
                 <Footer />
         </div>

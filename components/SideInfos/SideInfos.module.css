@@ -7,10 +7,21 @@
     height: 100%;
     padding: 20px 15px;
     border: 1px solid red;
+    animation: slide 0.2s forwards; 
+
 }
 
 .headerSide {
     font-size: 1.5rem;
     border-bottom: 1px solid black;
     margin-bottom: 10px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(1000%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
