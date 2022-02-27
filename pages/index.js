@@ -2,84 +2,18 @@
 import { dehydrate, useQuery, QueryClient } from 'react-query';
 
 /* UI */
-import DataTable from '../components/DataTable/DataTable';
-
-let datas = [
-    {
-        "firstname": "John",
-        "lastname": "Doe",
-        "email": "john.doe@gmail.com",
-        "job_title": "Salesperson",
-        "monthly_salary": 2500,
-        "has_guarantor": true,
-        "preferred_move_in_date": "01/03/2022"
-    },
-    {
-        "firstname": "Albert",
-        "lastname": "Green",
-        "email": "al.green@yahoo.com",
-        "job_title": "Junior designer",
-        "monthly_salary": 2000,
-        "has_guarantor": false,
-        "preferred_move_in_date": "04/03/2022"
-    },
-    {
-        "firstname": "Megan",
-        "lastname": "Blue",
-        "email": "meganblue@hotmail.com",
-        "job_title": "Lawyer",
-        "monthly_salary": 3500,
-        "has_guarantor": false,
-        "preferred_move_in_date": "28/02/2022"
-    },
-    {
-        "firstname": "Charlotte",
-        "lastname": "Brown",
-        "email": "charlottebrown@gmail.com",
-        "job_title": "Student",
-        "monthly_salary": 0,
-        "has_guarantor": true,
-        "preferred_move_in_date": "15/03/2022"
-    },
-    {
-        "firstname": "Paul",
-        "lastname": "Purple",
-        "email": "paul.purple@aol.com",
-        "job_title": "Marketing manager",
-        "monthly_salary": 3000,
-        "has_guarantor": false,
-        "preferred_move_in_date": "10/03/2022"
-    },
-    {
-        "firstname": "Alex",
-        "lastname": "Orange",
-        "email": "alexorange@gmail.com",
-        "job_title": "Business developer",
-        "monthly_salary": 2000,
-        "has_guarantor": false,
-        "preferred_move_in_date": "01/03/2022"
-    },
-    {
-        "firstname": "Alexia",
-        "lastname": "Tudor",
-        "email": "alexiatudor@hotmail.com",
-        "job_title": "Customer support representative",
-        "monthly_salary": 2000,
-        "has_guarantor": true,
-        "preferred_move_in_date": "01/04/2022"
-    }
-]  
+import DataTable from '../components/DataTable/DataTable'; 
 
 const getDatas = async () => await (await fetch("/api/datas").then(res => res.json()));
 
 export default function Index(props) {
 
-    const {data, error} = useQuery('fetchingDatas', getDatas); 
-    console.log(data);
+    const {data, isLoading, error} = useQuery('fetchingDatas', getDatas); 
 
     return (
         <main>
-            <DataTable datas={datas}/>
+            {data && <DataTable datas={data.datas}/>}
+            {error && <p>{error}</p>}
         </main>
     )
 }
