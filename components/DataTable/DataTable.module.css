@@ -11,19 +11,15 @@
     overflow-y: scroll;
 }
 
-@media screen and (max-width: 950px) {
-    .headerT {
-        width: 700%;
-    }
-}
-
-@media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
 
     .row {
         font-size: 0.6rem;
     }
 
 }
+
+/*
 
 @media screen and (max-width: 610px) {
     .headerT {
@@ -51,5 +47,5 @@
     .row {
         font-size: 0.4rem;
     }
-}
+} */
     

@@ -1,6 +1,7 @@
 .containerFooter {
     height: 100px;
     background-color: rgb(255, 148, 49);
+    margin: 0;
 }
 
 .footer {
