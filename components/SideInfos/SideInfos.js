@@ -8,6 +8,7 @@ import style from './SideInfos.module.css';
 /* ICONS */
 import {AiFillStar} from 'react-icons/ai';
 
+
 export default function SideInfos() {
 
     const {isSideOpen, rateApplicant, setIsSideOpen, setRateApplicant, applicant, stars, setStars} = useContext(SideInfosContext);
@@ -15,6 +16,14 @@ export default function SideInfos() {
     useEffect(() => {
         setStars([<AiFillStar className={style.star} />, <AiFillStar className={style.star} />,<AiFillStar className={style.star} />, <AiFillStar className={style.star} />, <AiFillStar className={style.star} />]);
     } , []);
+
+    /**
+     * setRate will generate the new array of stars, related to the index clicked
+     * @type {function(number)}
+     * @param {number} index
+     * @return {Array}
+     * @
+     */
 
     function setRate(index) {
 

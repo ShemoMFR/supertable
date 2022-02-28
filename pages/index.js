@@ -1,3 +1,9 @@
+/**
+ * @file index.js is the main file of the table application
+ * @author Moshé Frydmann
+ * @see <a href="https://github.com/ShemoMFR/supertable" target='_blank'>Repo GitHub</a>
+ */
+
 /* LIBRAIRIES */
 import { dehydrate, useQuery, QueryClient } from 'react-query';
 
@@ -17,6 +23,12 @@ export default function Index(props) {
         </main>
     )
 }
+
+/**
+ * getStaticProps is a server side function. It will generate static render of the data for ths component
+ * @type {function()}
+ * @return {Props}
+ */
 
 export async function getStaticProps() {
 
