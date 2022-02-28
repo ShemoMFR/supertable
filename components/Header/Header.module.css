@@ -1,12 +1,19 @@
 .containerHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
     background-color: rgb(255, 148, 49);
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    color: white;
+    width: 200px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(255, 148, 49);
+    font-weight: bold;
     font-size: 1.5rem;
 }

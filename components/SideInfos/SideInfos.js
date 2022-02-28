@@ -40,7 +40,7 @@ export default function SideInfos() {
     return (
         <div className={style.containerSide}>
             <div className={style.headerSide}>{`${applicant.firstname}  ${applicant.lastname} `}</div>
-            <div style={{color: "blue", borderBottom: "1px solid blue"}}><a href={`mailto=${applicant.email}`}>{applicant.email}</a></div>
+            <div className={style.email}><a href={`mailto=${applicant.email}`}>{applicant.email}</a></div>
             <p className={style.titles}>Job Title</p>
             <div>{applicant.job_title}</div>
             <p className={style.titles}>Salary</p>

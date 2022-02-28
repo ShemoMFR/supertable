@@ -17,6 +17,11 @@
     width: 90%;
 }
 
+.email {
+    color: blue;
+    border-bottom: "1px solid blue";
+}
+
 .titles {
     font-weight: bold;
     margin-top: 20px;

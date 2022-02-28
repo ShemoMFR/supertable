@@ -12,7 +12,7 @@ export default function Index(props) {
     const {data, isLoading, error} = useQuery('fetchingDatas', getDatas); 
 
     return (
-        <main style={{height: "70vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <main style={{height: "70vh", display: "flex", justifyContent: "center", alignItems: "center"}} >
             {data ? <DataTable datas={data.datas}/> : <p>{error}</p>}
         </main>
     )
